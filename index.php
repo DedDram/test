@@ -19,7 +19,29 @@ abstract class HumanAbstract
 
     public function introduceYourself(): string
     {
-        return $this->getGreetings() . '! ' . $this->getMyNameIs() . ' ' . $this->getName() . '.';
+        return $this->getGreetings() . '! ' . $this->getMyNameIs() . ' ';
     }
 }
-var_dump('664');
+
+class RussianHuman extends HumanAbstract
+{
+    public function getGreetings(): string{
+        return 'Привет!';
+    }
+    public function getMyNameIs(): string{
+        return 'Меня зовут ';
+    }
+}
+class EnglishHuman extends HumanAbstract
+{
+    public function getGreetings(): string{
+        return 'Hello!';
+    }
+    public function getMyNameIs(): string{
+        return 'My name is '.parent::getName();
+    }
+}
+$r = new RussianHuman('Иван');
+$e = new EnglishHuman('Ivan');
+
+echo $e->introduceYourself();
