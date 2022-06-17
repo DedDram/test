@@ -22,3 +22,4 @@ abstract class HumanAbstract
         return $this->getGreetings() . '! ' . $this->getMyNameIs() . ' ' . $this->getName() . '.';
     }
 }
+var_dump('664');
